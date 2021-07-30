@@ -95,6 +95,7 @@ p {
   font-size: 14px;
   color: #777777;
   line-height: 22px;
+  margin: 0px;
 }
 
 a {

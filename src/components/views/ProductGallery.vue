@@ -1,6 +1,10 @@
 <template>
   <div class="product-gallery">
-    <PageDetailsBanner text="Product Selection" :data="data" />
+    <PageDetailsBanner
+      text="Product Selection"
+      :salesRep="data.SalesRep"
+      :message="data.Message"
+    />
     <div class="product-gallery__container layout-container">
       <ul class="product-gallery__product-list">
         <router-link

@@ -1,7 +1,7 @@
 <template>
   <div class="product-view">
     <div class="product-view">
-      <PageDetailsBanner text="Product Selection" :data="data" />
+      <PageDetailsBanner :text="productData.ItemName" :salesRep="salesRep" />
       <div class="product-view__container layout-container">
         <div class="product-view__image__container">
           <Image :src="productData.PhotoName" :alt="productData.ItemName" />
@@ -29,6 +29,7 @@
 
 <script>
 import Image from "../Image/Image.vue";
+import PageDetailsBanner from "../PageDetailsBanner/PageDetailsBanner.vue";
 
 export default {
   name: "Productview",
@@ -37,6 +38,7 @@ export default {
   },
   components: {
     Image,
+    PageDetailsBanner,
   },
   computed: {
     basePrice() {
@@ -66,6 +68,11 @@ export default {
         this.$router.push("/not-found");
       }
     },
+  },
+  data() {
+    return {
+      salesRep: this.data.SalesRep,
+    };
   },
   created() {
     this.setSelected();

@@ -3,7 +3,11 @@
     <div class="page-details-banner__container layout-container">
       <div class="page-details-banner__content">
         <h2>{{ text }}</h2>
-        <div class="page-details-banner__message" v-html="Message"></div>
+        <div
+          class="page-details-banner__message"
+          v-if="message"
+          v-html="message"
+        ></div>
         <span>selected by : {{ `${FirstName || ""} ${LastName || ""}` }}</span>
       </div>
     </div>
@@ -15,15 +19,12 @@ export default {
   name: "PageDetailsbanner",
   props: {
     text: String,
-    data: Object,
+    salesRep: Object,
+    message: null,
   },
   data() {
-    const {
-      Message,
-      SalesRep: { FirstName, LastName },
-    } = this.data;
+    const { FirstName, LastName } = this.salesRep;
     return {
-      Message,
       FirstName,
       LastName,
     };
@@ -35,7 +36,6 @@ export default {
 .page-details-banner {
   background-color: var(--RepzioYellow);
   width: 100%;
-  height: 100px;
   padding: 50px 0px;
   display: flex;
   justify-content: center;
@@ -60,7 +60,7 @@ export default {
 }
 
 .page-details-banner__message p {
-  margin: 10px 0px;
+  margin: 5px 0px !important;
   line-height: 15px;
 }
 </style>
