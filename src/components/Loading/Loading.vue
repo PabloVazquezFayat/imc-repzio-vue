@@ -1,7 +1,7 @@
 <template>
-  <div className="loading">
-    <div className="loading-text">Loading</div>
-    <div className="loading-graphic"></div>
+  <div class="loading">
+    <div class="loading-text">Loading</div>
+    <div class="loading-graphic"></div>
   </div>
 </template>
 

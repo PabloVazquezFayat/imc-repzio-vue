@@ -1,9 +1,9 @@
 <template>
-  <div className="page-details-banner">
-    <div className="page-details-banner__container layout-container ">
-      <div className="page-details-banner__content">
+  <div class="page-details-banner">
+    <div class="page-details-banner__container layout-container">
+      <div class="page-details-banner__content">
         <h2>{{ text }}</h2>
-        <div className="page-details-banner__message" v-html="Message"></div>
+        <div class="page-details-banner__message" v-html="Message"></div>
         <span>selected by : {{ `${FirstName || ""} ${LastName || ""}` }}</span>
       </div>
     </div>

@@ -1,14 +1,14 @@
 <template>
-  <div className="footer">
-    <div className="footer__container layout-container">
-      <div className="footer__container__content">
+  <div class="footer">
+    <div class="footer__container layout-container">
+      <div class="footer__container__content">
         <Logo :src="src" :alt="alt" />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-      <div className="footer__container__content">
+      <div class="footer__container__content">
         <ContactCard v-if="salesRep" :salesRep="salesRep" />
       </div>
     </div>

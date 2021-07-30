@@ -1,24 +1,24 @@
 <template>
-  <div className="product-view">
-    <div className="product-view">
+  <div class="product-view">
+    <div class="product-view">
       <PageDetailsBanner text="Product Selection" :data="data" />
-      <div className="product-view__container layout-container">
-        <div className="product-view__image__container">
+      <div class="product-view__container layout-container">
+        <div class="product-view__image__container">
           <Image :src="productData.PhotoName" :alt="productData.ItemName" />
         </div>
 
-        <div className="product-view__product-details__container">
+        <div class="product-view__product-details__container">
           <h2>{{ productData.ItemName }}</h2>
-          <div className="product-view__base-price">
+          <div class="product-view__base-price">
             Base Price: {{ basePrice }}
           </div>
           <p>
             {{ description }}
           </p>
-          <div className="product-view__item-info">
+          <div class="product-view__item-info">
             Dimensions: {{ productData.Dimensions }}
           </div>
-          <div className="product-view__item-info item-id">
+          <div class="product-view__item-info item-id">
             Item ID: {{ productData.ItemID }}
           </div>
         </div>

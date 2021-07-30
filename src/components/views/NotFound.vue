@@ -1,11 +1,9 @@
 <template>
-  <div className="not-found">
-    <div className="not-found__container layout-container">
+  <div class="not-found">
+    <div class="not-found__container layout-container">
       <h1>404</h1>
       <h4>something went wrong</h4>
-      <router-link className="not-found__button" to="/">
-        Go Back Home</router-link
-      >
+      <router-link class="not-found__button" to="/"> Go Back Home</router-link>
     </div>
   </div>
 </template>
