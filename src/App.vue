@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-    <Navbar v-if="dbData" :data="dbData" />
-    <router-view v-if="dbData" :data="dbData" />
-    <Footer v-if="dbData" :data="dbData" />
+    <Loading v-if="isLoading" />
+    <div v-else>
+      <Navbar v-if="dbData" :data="dbData" />
+      <router-view v-if="dbData" :data="dbData" />
+      <Footer v-if="dbData" :data="dbData" />
+    </div>
   </div>
 </template>
 
@@ -10,16 +13,19 @@
 import axios from "axios";
 import Navbar from "./components/Navbar/Navbar.vue";
 import Footer from "./components/Footer/Footer.vue";
+import Loading from "./components/Loading/Loading.vue";
 
 export default {
   name: "App",
   components: {
     Navbar,
     Footer,
+    Loading,
   },
 
   data() {
     return {
+      isLoading: true,
       dbData: null,
     };
   },
@@ -32,6 +38,14 @@ export default {
     async fetchData() {
       try {
         const res = await axios.get("../../db/product-data.json");
+
+        //mocks loading behavior delay of a server
+        if (res.data) {
+          setTimeout(() => {
+            this.isLoading = false;
+          }, 1000);
+        }
+
         return res.data;
       } catch (error) {
         console.log(error);
